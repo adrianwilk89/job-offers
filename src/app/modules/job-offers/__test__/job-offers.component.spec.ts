@@ -43,3 +43,4 @@ describe('JobOffers', () => {
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelectorAll('.mat-mdc-list-item').length).toBe(2)
     })
+})
