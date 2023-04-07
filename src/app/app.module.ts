@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { JobOffersModule } from './modules/job-offers/job-offers.module';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './common/Auth.interceptor';
+import { AuthInterceptor } from './common/interceptors/Auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,4 +23,5 @@ import { AuthInterceptor } from './common/Auth.interceptor';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
