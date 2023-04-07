@@ -10,9 +10,11 @@ export class JobOffersService {
     constructor(private http: HttpClient) {}
 
     getJobOffers(): Observable<{ jobs: JobOffer[] }> {
-        return this.http.get<{ jobs: JobOffer[] }>(`${environment.apiEndpoint}offers/list/pl`).pipe(catchError((error) => {
+        return this.http
+        .get<{ jobs: JobOffer[] }>(`${environment.apiEndpoint}offers/list/pl`)
+        .pipe(catchError((error) => {
             return throwError(() => error);
-        }),)
+        }))
     }
 
 }
