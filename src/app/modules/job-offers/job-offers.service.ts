@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { JobOffer } from './constants';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class JobOffersService {
@@ -9,7 +10,7 @@ export class JobOffersService {
     constructor(private http: HttpClient) {}
 
     getJobOffers(): Observable<{ jobs: JobOffer[] }> {
-        return this.http.get<{ jobs: JobOffer[] }>('https://api.lot.com/hr/v3/offers/list/pl')
+        return this.http.get<{ jobs: JobOffer[] }>(`${environment.apiEndpoint}offers/list/pl`)
     }
 
 }
