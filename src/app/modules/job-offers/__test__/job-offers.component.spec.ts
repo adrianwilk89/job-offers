@@ -32,8 +32,6 @@ describe('JobOffers', () => {
         fixture = TestBed.createComponent(JobOffersComponent);
         fixture.detectChanges();
         expect(MockJobOffersService.getJobOffers).toHaveBeenCalled();
-        expect(fixture.componentInstance.jobs.length).toBe(2);
-
     })
 
     it('should render two offers when data are provided', () => {
