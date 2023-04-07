@@ -10,14 +10,11 @@ import { JobOffer } from './constants';
 
 export class JobOffersComponent implements OnInit {
 
-    constructor(private service: JobOffersService) { }
+    constructor(private jobOffersService: JobOffersService) { }
 
-    jobs!: JobOffer[];
-
+    jobsResponse!: Observable<{jobs: JobOffer[]}>
 
     ngOnInit() {
-        this.service.getJobOffers().subscribe((data: any) => {
-            this.jobs = data.jobs
-        })
+        this.jobsResponse = this.jobOffersService.getJobOffers()
     }
 }

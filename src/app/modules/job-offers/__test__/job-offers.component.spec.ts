@@ -4,7 +4,6 @@ import { JobOffersComponent } from '../job-offers.component';
 import { JobOffersService } from '../job-offers.service';
 import { MockJobOffersService } from './job-offers.mocks';
 
-
 describe('JobOffers', () => {
 
     let component: JobOffersComponent;
@@ -43,4 +42,5 @@ describe('JobOffers', () => {
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelectorAll('.mat-mdc-list-item').length).toBe(2)
     })
+    
 })

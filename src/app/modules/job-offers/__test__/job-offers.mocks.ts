@@ -25,5 +25,5 @@ export const MockJobOffersData: JobOffer[] = [{
 export const MockJobOffersService = {
     getJobOffers: jasmine.createSpy('getCount').and.returnValue(of({
         jobs: MockJobOffersData
-    })),
+    }))
 }
