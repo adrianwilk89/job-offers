@@ -8,3 +8,7 @@ export interface JobOffer {
     title: string;
     url: string;
 }
+
+export interface JobsResponse {
+    jobs: JobOffer[]
+}

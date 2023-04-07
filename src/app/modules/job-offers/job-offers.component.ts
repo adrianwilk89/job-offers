@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobOffersService } from './job-offers.service';
 import { Observable } from 'rxjs';
-import { JobOffer } from './constants';
+import { JobsResponse } from './constants';
 
 @Component({
     selector: 'job-offers-list',
@@ -12,7 +12,7 @@ export class JobOffersComponent implements OnInit {
 
     constructor(private jobOffersService: JobOffersService) { }
 
-    jobsResponse!: Observable<{jobs: JobOffer[]}>
+    jobsResponse!: Observable<JobsResponse>
 
     ngOnInit() {
         this.jobsResponse = this.jobOffersService.getJobOffers()
